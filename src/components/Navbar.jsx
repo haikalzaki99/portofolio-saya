@@ -53,8 +53,12 @@ export default function Navbar() {
         </button>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden px-6 pb-4 flex flex-col gap-4">
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-6 pb-4 flex flex-col gap-4">
           {menuItems.map((item) => (
             <a
               key={item.href}
@@ -66,7 +70,7 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-      )}
+      </div>
     </nav>
   )
 }
