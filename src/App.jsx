@@ -1,14 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import Hero from './components/Hero'
+import About from './components/About'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Contact from './components/Contact'
 
 function App() {
   return (
-    <h1 className="text-4xl font-bold text-blue-600 text-center mt-10">
-      Tailwind Berhasil!
-    </h1>
+    <div>
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+    </div>
   )
 }
 
