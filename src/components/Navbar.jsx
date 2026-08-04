@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Moon, Sun } from 'lucide-react'
 
 const menuItems = [
   { label: 'About', href: '#about' },
@@ -9,9 +10,19 @@ const menuItems = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [dark, setDark] = useState(() => {
+    const storedTheme = localStorage.getItem('theme')
+    if (storedTheme) return storedTheme === 'dark'
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+  })
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', dark)
+    localStorage.setItem('theme', dark ? 'dark' : 'light')
+  }, [dark])
 
   return (
-    <nav className="sticky top-0 z-50 bg-gray-900/80 backdrop-blur text-white">
+    <nav className="sticky top-0 z-50 bg-gray-900/80 dark:bg-gray-950/80 backdrop-blur text-white">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="text-xl font-bold tracking-wide">
           JACK TECH
@@ -29,28 +40,39 @@ export default function Navbar() {
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-1"
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block h-0.5 w-6 bg-white transition-transform ${
-              isOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-white transition-opacity ${
-              isOpen ? 'opacity-0' : ''
-            }`}
-          />
-          <span
-            className={`block h-0.5 w-6 bg-white transition-transform ${
-              isOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
-          />
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setDark(!dark)}
+            className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            {dark ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden flex flex-col gap-1.5 p-1"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block h-0.5 w-6 bg-white transition-transform ${
+                isOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-white transition-opacity ${
+                isOpen ? 'opacity-0' : ''
+              }`}
+            />
+            <span
+              className={`block h-0.5 w-6 bg-white transition-transform ${
+                isOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            />
+          </button>
+        </div>
       </div>
 
       <div
