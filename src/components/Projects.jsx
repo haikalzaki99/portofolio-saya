@@ -19,6 +19,19 @@ const projects = [
       'Panel admin untuk mengelola data pengguna, laporan, dan statistik.',
     tech: ['React', 'Tailwind', 'Node.js'],
   },
+    {
+    name: 'Undangan Digital',
+    description:
+      'Web undangan interaktif yang elegan, dilengkapi fitur RSVP, galeri foto, dan integrasi peta lokasi.',
+    tech: ['React', 'Tailwind', 'Node.js'],
+  },
+      {
+    name: 'Sistem Administrasi Sekolah',
+    description:
+      'Sistem Informasi yang memudahkan guru dan Manajemen dalam Admisnistarsi Sekolah.',
+    tech: ['React', 'Tailwind', 'Node.js'],
+  },
+
 ]
 
 export default function Projects() {
