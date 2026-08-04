@@ -22,7 +22,7 @@ export default function Navbar() {
   }, [dark])
 
   return (
-    <nav className="sticky top-0 z-50 bg-gray-900/80 dark:bg-gray-950/80 backdrop-blur text-white">
+    <nav className="sticky top-0 z-50 bg-slate-900/80 dark:bg-slate-800/80 backdrop-blur text-white">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="text-xl font-bold tracking-wide">
           JACK TECH
@@ -33,7 +33,7 @@ export default function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="hover:text-blue-400 transition-colors"
+              className="hover:text-indigo-400 transition-colors"
             >
               {item.label}
             </a>
@@ -86,7 +86,7 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="hover:text-blue-400 transition-colors"
+              className="hover:text-indigo-400 transition-colors"
             >
               {item.label}
             </a>
