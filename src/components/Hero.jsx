@@ -17,7 +17,7 @@ export default function Hero() {
           JACK TECH
         </h1>
         <p className="mt-5 text-xl text-slate-300 dark:text-slate-400">
-          Frontend Developer | Membangun web modern dan responsif
+          Frontend Developer | Membangun web modern dan responsif | Undangan Digital
         </p>
         <a
           href="#projects"

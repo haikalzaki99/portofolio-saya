@@ -22,7 +22,7 @@ export default function Navbar() {
   }, [dark])
 
   return (
-    <nav className="sticky top-0 z-50 bg-slate-900/80 dark:bg-slate-800/80 backdrop-blur text-white">
+    <nav className="sticky top-0 z-50 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-sm text-white">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="text-xl font-bold tracking-wide">
           JACK TECH
