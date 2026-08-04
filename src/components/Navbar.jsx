@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
+import logo from '../assets/logo.png'
 
 const menuItems = [
   { label: 'About', href: '#about' },
@@ -24,10 +25,10 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-sm text-white">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold tracking-wide">
-          JACK TECH
-        </a>
-
+      <a href="#" className="flex items-center gap-2 text-xl font-bold tracking-wide">
+        <img src={logo} alt="Logo" className="h-8 w-8 object-contain" />
+        JACK TECH
+      </a>
         <div className="hidden md:flex gap-8">
           {menuItems.map((item) => (
             <a
